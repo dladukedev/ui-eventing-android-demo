@@ -2,10 +2,10 @@ package com.dladukedev.uievents.domain
 
 import android.util.Log
 
-interface AnalyticsUseCase {
+interface LogAnalyticsUseCase {
     operator fun invoke(message: String)
 }
-class AnalyticsUseCaseImpl: AnalyticsUseCase {
+class LogcatLogAnalyticsUseCase: LogAnalyticsUseCase {
     override fun invoke(message: String) {
         Log.i("Analytics", message)
     }

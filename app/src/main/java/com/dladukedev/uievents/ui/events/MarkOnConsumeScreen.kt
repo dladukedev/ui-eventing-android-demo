@@ -7,8 +7,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.dladukedev.uievents.domain.AnalyticsUseCase
-import com.dladukedev.uievents.domain.AnalyticsUseCaseImpl
+import com.dladukedev.uievents.domain.LogAnalyticsUseCase
+import com.dladukedev.uievents.domain.LogcatLogAnalyticsUseCase
 import com.dladukedev.uievents.ui.core.EventScreen
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 class MarkOnConsumeViewModel(
-    private val logAnalytics: AnalyticsUseCase = AnalyticsUseCaseImpl()
+    private val logAnalytics: LogAnalyticsUseCase = LogcatLogAnalyticsUseCase()
 ) : ViewModel() {
     private val _events = MutableStateFlow<List<Event>>(emptyList())
     val events = _events.asStateFlow()
